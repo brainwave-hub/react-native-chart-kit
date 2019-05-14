@@ -89,12 +89,12 @@ class AbstractChart extends Component {
       let yLabel
 
       if (count === 1) {
-        yLabel = `${yAxisLabel}${data[0].toFixed(decimalPlaces)}`
+        yLabel = `${data[0].toFixed(decimalPlaces)}${yAxisLabel}`
       } else {
         const label = this.props.fromZero ?
           (this.calcScaler(data) / (count - 1)) * i + Math.min(...data, 0) :
           (this.calcScaler(data) / (count - 1)) * i + Math.min(...data)
-        yLabel = `${yAxisLabel}${label.toFixed(decimalPlaces)}`
+        yLabel = `${label.toFixed(decimalPlaces)}${yAxisLabel}`
       }
 
       return (
